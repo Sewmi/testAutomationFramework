@@ -6,6 +6,7 @@ import com.guru99.demo.pages.RegisterSuccessPage;
 import com.guru99.demo.utitlity.Application;
 import com.guru99.demo.utitlity.PropertyFileHandler;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -41,4 +42,8 @@ public class RegisterUserTest {
                 , "Registration failed! Salutation message mismatch!");
     }
 
+    @AfterMethod
+    public void tearDown() {
+        app.getDriver().quit();
+    }
 }
